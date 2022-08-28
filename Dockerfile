@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     wget \
     curl \
-    git-core
+    git-core \
+    openjdk-11-jdk
 
 #install zsh for root
 RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
@@ -53,8 +54,5 @@ RUN mkdir -p $NVM_DIR && \
         && nvm install $NODE_VERSION \
         $$ nvm alias default $NODE_VERSION \
         && nvm use default
-
-# java env
-RUN sudo apt install -y openjdk-11-jdk
 
 
