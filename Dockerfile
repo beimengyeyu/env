@@ -46,7 +46,7 @@ RUN git config --global --add pull.rebase false \
     && git config --global alias.pullall '!git pull && git submodule update --init --recursive'
 
 # node env
-ENV NODE_VERSION 14.18.0
+ENV NODE_VERSION 16.14.2
 ENV NVM_DIR /home/me/.nvm
 RUN mkdir -p $NVM_DIR && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
