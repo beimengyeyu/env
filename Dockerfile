@@ -54,6 +54,9 @@ RUN mkdir -p $NVM_DIR && \
         && nvm install $NODE_VERSION \
         $$ nvm alias default $NODE_VERSION \
         && nvm use default
+RUN echo 'export NVM_DIR=~/.nvm' >> ~/.zshrc && \
+    echo '[ -s "$NVM_DIR/nvm.sh" ] && \
+    . "$NVM_DIR/nvm.sh"' >> ~/.zshrc
 
 RUN echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
