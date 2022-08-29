@@ -47,7 +47,7 @@ RUN git config --global --add pull.rebase false \
 
 # node env
 ENV NODE_VERSION 16.14.2
-ENV NVM_DIR ~/.nvm
+ENV NVM_DIR /home/me/.nvm
 RUN mkdir -p $NVM_DIR && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
         && . $NVM_DIR/nvm.sh \
